@@ -7,3 +7,5 @@
 *_cache/
 site_libs/
 .Renviron
+
+/.quarto/

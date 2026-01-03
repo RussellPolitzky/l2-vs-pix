@@ -167,7 +167,10 @@ window.Quarto = {
   </ul></li>
   <li><a href="#comparative-analysis" id="toc-comparative-analysis" class="nav-link" data-scroll-target="#comparative-analysis">2. Comparative Analysis</a></li>
   <li><a href="#why-pix-is-superior-in-contemporary-context" id="toc-why-pix-is-superior-in-contemporary-context" class="nav-link" data-scroll-target="#why-pix-is-superior-in-contemporary-context">3. Why Pix is “Superior” in Contemporary Context</a></li>
-  <li><a href="#the-security-compromise-the-trilemma" id="toc-the-security-compromise-the-trilemma" class="nav-link" data-scroll-target="#the-security-compromise-the-trilemma">4. The Security Compromise (The Trilemma)</a></li>
+  <li><a href="#the-philosophical-divide-trust-models" id="toc-the-philosophical-divide-trust-models" class="nav-link" data-scroll-target="#the-philosophical-divide-trust-models">4. The Philosophical Divide: Trust Models</a>
+  <ul class="collapse">
+  <li><a href="#the-scalability-trilemma" id="toc-the-scalability-trilemma" class="nav-link" data-scroll-target="#the-scalability-trilemma">The Scalability Trilemma</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -207,17 +210,17 @@ window.Quarto = {
 
 <section id="executive-summary" class="level2">
 <h2 class="anchored" data-anchor-id="executive-summary">Executive Summary</h2>
-<p>This document compares the technical and social architecture of <strong>Layer 2 (L2)</strong> blockchain scaling solutions with Brazil’s <strong>Pix</strong> payment system. While L2s use cryptography to scale decentralized networks, Pix utilizes <strong>Digital Public Infrastructure (DPI)</strong> to modernize centralized finance.</p>
+<p>This document compares the technical and social architecture of <strong>Layer 2 (L2)</strong> blockchain scaling solutions with Brazil’s <strong>Pix</strong> payment system. While L2s use cryptography to scale decentralized networks, Pix utilizes <strong>Digital Public Infrastructure (DPI)</strong> to modernize centralized finance. Pix is often cited as the global “gold standard” for DPI, balancing efficiency with extreme ease of use.</p>
 </section>
 <section id="defining-the-architectures" class="level2">
 <h2 class="anchored" data-anchor-id="defining-the-architectures">1. Defining the Architectures</h2>
 <section id="layer-2-blockchains" class="level3">
 <h3 class="anchored" data-anchor-id="layer-2-blockchains">Layer 2 Blockchains</h3>
-<p>Layer 2 refers to protocols built atop a “Layer 1” (like Ethereum) to increase throughput. They operate by processing transactions off-chain and submitting compressed state updates to the main chain <span class="citation" data-cites="buterin2021rollups">Buterin (<a href="#ref-buterin2021rollups" role="doc-biblioref">2021</a>)</span>.</p>
+<p>Layer 2 refers to protocols built atop a “Layer 1” (like Ethereum) to increase throughput. They operate by processing transactions off-chain and submitting compressed state updates to the main chain <span class="citation" data-cites="buterin2021rollups">Buterin (<a href="#ref-buterin2021rollups" role="doc-biblioref">2021</a>)</span>. Their security is derived from <strong>cryptographic proofs</strong> (ZK-Rollups) or <strong>game-theoretic incentives</strong> (Optimistic Rollups).</p>
 </section>
 <section id="brazils-pix" class="level3">
 <h3 class="anchored" data-anchor-id="brazils-pix">Brazil’s Pix</h3>
-<p>Launched in 2020 by the Central Bank of Brazil (BCB), Pix is an instant payment ecosystem. It functions as a high-speed execution layer for the Brazilian financial system, settling transactions in real-time via the <em>Sistema de Pagamentos Instantâneos</em> (SPI) <span class="citation" data-cites="bcb2020pix">Central Bank of Brazil (<a href="#ref-bcb2020pix" role="doc-biblioref">2020</a>)</span>.</p>
+<p>Launched in 2020 by the Central Bank of Brazil (BCB), Pix is an instant payment ecosystem. It functions as a high-speed execution layer for the Brazilian financial system, settling transactions in real-time via the <em>Sistema de Pagamentos Instantâneos</em> (SPI) <span class="citation" data-cites="bcb2020pix">Central Bank of Brazil (<a href="#ref-bcb2020pix" role="doc-biblioref">2020</a>)</span>. Unlike L2s, Pix relies on <strong>regulatory trust</strong> and a centralized ledger.</p>
 <hr>
 </section>
 </section>
@@ -258,9 +261,14 @@ window.Quarto = {
 <td style="text-align: left;">&lt; 3 Seconds</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;"><strong>Privacy</strong></td>
-<td style="text-align: left;">Pseudonymous (On-chain)</td>
-<td style="text-align: left;">Transparent to Regulator</td>
+<td style="text-align: left;"><strong>UX Abstraction</strong></td>
+<td style="text-align: left;">Seed Phrases / Wallets</td>
+<td style="text-align: left;">“Pix Keys” (Email, Phone)</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><strong>Fragmentation</strong></td>
+<td style="text-align: left;">High (Multi-chain silos)</td>
+<td style="text-align: left;">Zero (Unified Protocol)</td>
 </tr>
 </tbody>
 </table>
@@ -270,20 +278,28 @@ window.Quarto = {
 <p>Pix is often considered superior for mass-market retail for several reasons:</p>
 <ol type="1">
 <li><strong>Zero Fragmentation:</strong> Unlike L2s, where users must “bridge” assets between different chains (e.g., Arbitrum to Starknet), Pix is a <strong>unified protocol</strong>. Every bank in Brazil is required to support it, creating a seamless network effect.</li>
-<li><strong>User Onboarding:</strong> L2s require managing private keys and “seed phrases.” Pix uses intuitive <strong>Pix Keys</strong> (CPF, Email, Phone), removing the technical barrier to entry <span class="citation" data-cites="duarte2022pix">(<a href="#ref-duarte2022pix" role="doc-biblioref">Duarte et al. 2022</a>)</span>.</li>
+<li><strong>Masterclass in UX (Pix Keys):</strong> L2s require managing private keys and “seed phrases.” Pix uses intuitive <strong>Pix Keys</strong> (CPF, Email, Phone), removing the technical barrier to entry <span class="citation" data-cites="duarte2022pix">(<a href="#ref-duarte2022pix" role="doc-biblioref">Duarte et al. 2022</a>)</span>. This abstraction layer has been critical for financial inclusion in Brazil.</li>
 <li><strong>Cost Neutrality:</strong> While L2 fees are low, they are rarely zero. Pix is free for users, incentivizing even the smallest transactions (e.g., street vendors).</li>
 <li><strong>Consumer Protection:</strong> Pix includes the <em>Mecanismo Especial de Devolução</em> (MED), allowing for fund recovery in fraud cases—a feature absent in the “immutable” world of L2s.</li>
 </ol>
 <hr>
 </section>
-<section id="the-security-compromise-the-trilemma" class="level2">
-<h2 class="anchored" data-anchor-id="the-security-compromise-the-trilemma">4. The Security Compromise (The Trilemma)</h2>
+<section id="the-philosophical-divide-trust-models" class="level2">
+<h2 class="anchored" data-anchor-id="the-philosophical-divide-trust-models">4. The Philosophical Divide: Trust Models</h2>
+<p>The fundamental difference lies in <strong>how trust is established</strong>:</p>
+<ul>
+<li><strong>Pix (Institutional Trust):</strong> Users trust the Central Bank of Brazil and the regulated financial institutions. Efficiency is gained by assuming validity through authority.</li>
+<li><strong>Layer 2 (Cryptographic Trust):</strong> Users trust the code and the underlying L1. Efficiency is gained by compressing data, but validity must be proven to a decentralized network.</li>
+</ul>
+<section id="the-scalability-trilemma" class="level3">
+<h3 class="anchored" data-anchor-id="the-scalability-trilemma">The Scalability Trilemma</h3>
 <p>In blockchain, we use the <strong>Scalability Trilemma</strong> formula to express the trade-offs:</p>
 <p><span class="math display">\[Scalability + Security + Decentralization = 2\]</span></p>
-<p>Layer 2s often compromise on <strong>Decentralization</strong> (via centralized sequencers) to gain speed. Pix, however, discards the requirement for decentralization entirely. By utilizing a <strong>centralized trusted authority</strong> (The Central Bank), it achieves a level of performance that current decentralized L2s cannot match without sacrificing their core ethos of censorship resistance.</p>
+<p>Layer 2s often compromise on <strong>Decentralization</strong> (via centralized sequencers) to gain speed. Pix, however, discards the requirement for decentralization entirely. By utilizing a <strong>centralized trusted authority</strong>, it achieves a level of performance and deterministic finality that current decentralized L2s cannot match without sacrificing their core ethos of censorship resistance.</p>
 
 
 
+</section>
 </section>
 
 <div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
@@ -369,7 +385,7 @@ Duarte, Angelo et al. 2022. <span>“Financial Inclusion and the Digital Revolut
     }
       var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
       var mailtoRegex = new RegExp(/^mailto:/);
-        var filterRegex = new RegExp('/' + window.location.host + '/');
+        var filterRegex = new RegExp("https:\/\/russellpolitzky\.github\.io\/l2-vs-pix\/");
       var isInternal = (href) => {
           return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
       }

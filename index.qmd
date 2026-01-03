@@ -12,17 +12,15 @@ bibliography: references.bib
 ---
 
 ## Executive Summary
-This document compares the technical and social architecture of **Layer 2 (L2)** blockchain scaling solutions with Brazil's **Pix** payment system. While L2s use cryptography to scale decentralized networks, Pix utilizes **Digital Public Infrastructure (DPI)** to modernize centralized finance.
+This document compares the technical and social architecture of **Layer 2 (L2)** blockchain scaling solutions with Brazil's **Pix** payment system. While L2s use cryptography to scale decentralized networks, Pix utilizes **Digital Public Infrastructure (DPI)** to modernize centralized finance. Pix is often cited as the global "gold standard" for DPI, balancing efficiency with extreme ease of use.
 
 ## 1. Defining the Architectures
 
 ### Layer 2 Blockchains
-Layer 2 refers to protocols built atop a "Layer 1" (like Ethereum) to increase throughput. They operate by processing transactions off-chain and submitting compressed state updates to the main chain @buterin2021rollups.
+Layer 2 refers to protocols built atop a "Layer 1" (like Ethereum) to increase throughput. They operate by processing transactions off-chain and submitting compressed state updates to the main chain @buterin2021rollups. Their security is derived from **cryptographic proofs** (ZK-Rollups) or **game-theoretic incentives** (Optimistic Rollups).
 
 ### Brazil's Pix
-Launched in 2020 by the Central Bank of Brazil (BCB), Pix is an instant payment ecosystem. It functions as a high-speed execution layer for the Brazilian financial system, settling transactions in real-time via the *Sistema de Pagamentos Instantâneos* (SPI) @bcb2020pix.
-
-
+Launched in 2020 by the Central Bank of Brazil (BCB), Pix is an instant payment ecosystem. It functions as a high-speed execution layer for the Brazilian financial system, settling transactions in real-time via the *Sistema de Pagamentos Instantâneos* (SPI) @bcb2020pix. Unlike L2s, Pix relies on **regulatory trust** and a centralized ledger.
 
 ---
 
@@ -34,25 +32,31 @@ Launched in 2020 by the Central Bank of Brazil (BCB), Pix is an instant payment 
 | **Trust Model** | Math & Game Theory | Regulatory Oversight |
 | **Fees** | Variable (Gas) | Free (for individuals) |
 | **Finality** | Seconds to Days | < 3 Seconds |
-| **Privacy** | Pseudonymous (On-chain) | Transparent to Regulator |
+| **UX Abstraction** | Seed Phrases / Wallets | "Pix Keys" (Email, Phone) |
+| **Fragmentation** | High (Multi-chain silos) | Zero (Unified Protocol) |
 
 ## 3. Why Pix is "Superior" in Contemporary Context
 
 Pix is often considered superior for mass-market retail for several reasons:
 
 1.  **Zero Fragmentation:** Unlike L2s, where users must "bridge" assets between different chains (e.g., Arbitrum to Starknet), Pix is a **unified protocol**. Every bank in Brazil is required to support it, creating a seamless network effect.
-2.  **User Onboarding:** L2s require managing private keys and "seed phrases." Pix uses intuitive **Pix Keys** (CPF, Email, Phone), removing the technical barrier to entry [@duarte2022pix].
+2.  **Masterclass in UX (Pix Keys):** L2s require managing private keys and "seed phrases." Pix uses intuitive **Pix Keys** (CPF, Email, Phone), removing the technical barrier to entry [@duarte2022pix]. This abstraction layer has been critical for financial inclusion in Brazil.
 3.  **Cost Neutrality:** While L2 fees are low, they are rarely zero. Pix is free for users, incentivizing even the smallest transactions (e.g., street vendors).
 4.  **Consumer Protection:** Pix includes the *Mecanismo Especial de Devolução* (MED), allowing for fund recovery in fraud cases—a feature absent in the "immutable" world of L2s.
 
-
-
 ---
 
-## 4. The Security Compromise (The Trilemma)
+## 4. The Philosophical Divide: Trust Models
+
+The fundamental difference lies in **how trust is established**:
+
+*   **Pix (Institutional Trust):** Users trust the Central Bank of Brazil and the regulated financial institutions. Efficiency is gained by assuming validity through authority.
+*   **Layer 2 (Cryptographic Trust):** Users trust the code and the underlying L1. Efficiency is gained by compressing data, but validity must be proven to a decentralized network.
+
+### The Scalability Trilemma
 
 In blockchain, we use the **Scalability Trilemma** formula to express the trade-offs:
 
 $$Scalability + Security + Decentralization = 2$$
 
-Layer 2s often compromise on **Decentralization** (via centralized sequencers) to gain speed. Pix, however, discards the requirement for decentralization entirely. By utilizing a **centralized trusted authority** (The Central Bank), it achieves a level of performance that current decentralized L2s cannot match without sacrificing their core ethos of censorship resistance.
+Layer 2s often compromise on **Decentralization** (via centralized sequencers) to gain speed. Pix, however, discards the requirement for decentralization entirely. By utilizing a **centralized trusted authority**, it achieves a level of performance and deterministic finality that current decentralized L2s cannot match without sacrificing their core ethos of censorship resistance.

@@ -1,0 +1,18 @@
+project:
+  type: website
+  output-dir: _site
+
+website:
+  title: "L2 vs PIX"
+  navbar:
+    left:
+      - href: index.qmd
+        text: Home
+
+format:
+  html:
+    theme: darkly
+    toc: true
+    code-fold: true
+    fig-align: center
+    lib-dir: site_libs

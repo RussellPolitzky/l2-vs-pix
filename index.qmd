@@ -6,6 +6,8 @@ format:
   html:
     toc: true
     code-fold: true
+    fig-align: center
+    theme: darkly
 bibliography: references.bib
 ---
 
